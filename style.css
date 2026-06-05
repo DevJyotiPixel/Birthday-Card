@@ -1,0 +1,138 @@
+
+*{
+   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(120deg, lightblue, orange,grey);
+    overflow: hidden;
+}
+
+.card{
+    background: linear-gradient(45deg, red,rgb(104, 159, 184),rgb(97, 110, 145),yellow );
+    border-radius: 50px;
+    box-shadow: 0 10px 30px black;
+    text-align: center;
+    padding: 20px;
+    height: 320px;
+    max-width: 350px;
+    border: 2px solid rgb(109, 187, 243);
+    animation: fadeIn 1.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-frame{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 15px;
+    border: 5px solid #8cf3fa;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: bounce 2s infinite;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wish-text{
+    font-size: 20px;
+    color: #f8e410;
+    font-weight: bold;
+    margin: 30px 20px;
+    animation: glow 2s infinite alternate;
+}
+.sub-text{
+    font-size: 15px;
+    color: white;
+    margin: 40px;
+    line-height: 18px;
+    text-align: center;
+    animation: slideIn 1s ease-out;
+}
+span{
+    color: rgb(145, 29, 154);
+    font-weight: bold;
+    font-style: oblique;
+    
+}
+.floating-balloons{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+.balloon{
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background-color: #ff6f6f;
+    border-radius: 50%;
+    bottom: -60px;
+    animation: float 5s ease-in-out infinite;
+
+}
+.balloon:nth-child(2){
+    left: 20%;
+    animation-delay:2s;
+     
+}
+.balloon:nth-child(3){
+    left: 70%;
+    animation-delay: 4s;
+}
+/*Animation */
+
+@keyframes fadeIn{
+    from {opacity: 0; transform: translateY(20px);}
+    to{
+        opacity: 1; transform: translateY(0);
+    }
+}
+
+@keyframes bounce{
+    0%, 100%{ transform: translateY(0);}
+    50%{
+        transform: translateY(-10px);
+    }
+ }
+
+ @keyframes glow{
+    0%{text-shadow: 0 0 5px #61efff;}
+    100%{text-shadow: 0 0 20px #ff61fa;}
+ }
+
+ @keyframes slideIn{
+    from{transform: translateY(20px); opacity: 0;}
+    to{transform: translateY(0); opacity: 1;}
+ }
+
+ @keyframes float{
+    0% {transform: translateY(0);}
+    50%{transform: translateY(-200px);}
+    100%{transform: translateY(-400px);}
+
+ }
+
+ /* Add media queries for responsiveness */
+@media screen and (max-height: 600px){
+    .card{
+        height: 65vh;
+        max-height: 500px;
+    }
+}
